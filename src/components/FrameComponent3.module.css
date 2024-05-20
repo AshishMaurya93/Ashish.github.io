@@ -1,0 +1,79 @@
+.frameChild,
+.rollIcon {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.rollIcon {
+  height: 1024px;
+  width: 91px;
+  object-fit: contain;
+}
+.frameChild {
+  align-self: stretch;
+  height: 40px;
+  max-width: 100%;
+}
+.frameContainer {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-11xs) 0 0;
+  box-sizing: border-box;
+}
+.kPeopleInterested {
+  position: relative;
+  line-height: 44px;
+  font-weight: 500;
+}
+.frameParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-sm);
+}
+.frameWrapper,
+.rollParent {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.frameWrapper {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 0 var(--padding-461xl);
+  box-sizing: border-box;
+  min-height: 524px;
+}
+.rollParent {
+  margin: 0 !important;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 72px;
+  bottom: 0;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: var(--gap-52xl);
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--palette-pac-man-50);
+  font-family: var(--astrix-beta-heading-s);
+}
+@media screen and (max-width: 750px) {
+  .rollParent {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 450px) {
+  .kPeopleInterested {
+    font-size: var(--astrix-beta-title-m-size);
+    line-height: 35px;
+  }
+  .frameParent {
+    flex-wrap: wrap;
+  }
+}
