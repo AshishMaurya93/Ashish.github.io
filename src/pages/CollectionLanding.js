@@ -4,11 +4,24 @@ import FrameComponent2 from "../components/FrameComponent2";
 import FrameComponent1 from "../components/FrameComponent1";
 import FrameComponent from "../components/FrameComponent";
 import styles from "./CollectionLanding.module.css";
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const CollectionLanding = () => {
   const onFrameClick = useCallback(() => {
     // Please sync "Event Landing" to the project
   }, []);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
 
   return (
     <div className={styles.collectionLanding}>
@@ -26,27 +39,32 @@ const CollectionLanding = () => {
       <div className={styles.collectionLandingInner}>
         <div className={styles.frameParent}>
           <FrameComponent2 astrixBranding="/astrix-branding@2x.png" />
+          {/* <Slider {...settings}> */}
           <div className={styles.eventsWrapper}>
-            <div className={styles.events}>
-              <div className={styles.frameGroup}>
-                <FrameComponent1 frame1261154670="/frame-1261154670@2x.png" />
-                <FrameComponent1
-                  frame1261154670="/dropdown@2x.png"
-                  propPadding="0px var(--padding-11xs)"
-                />
+          <Slider {...settings}> 
+              <div className={styles.events}>
+                <div className={styles.frameGroup}>
+                  <FrameComponent1 frame1261154670="/frame-1261154670@2x.png" />
+                  <FrameComponent1
+                    frame1261154670="/dropdown@2x.png"
+                    propPadding="0px var(--padding-11xs)"
+                  />
+                  <img
+                    className={styles.eventsChild}
+                    alt=""
+                    src="/frame-1261154672@2x.png"
+                  />
+                  <img
+                    className={styles.eventsItem}
+                    alt=""
+                    src="/frame-1261154671-1@2x.png"
+                  />
+                </div>
               </div>
-              <img
-                className={styles.eventsChild}
-                alt=""
-                src="/frame-1261154672@2x.png"
-              />
-              <img
-                className={styles.eventsItem}
-                alt=""
-                src="/frame-1261154671-1@2x.png"
-              />
-            </div>
+            </Slider>
           </div>
+          {/* </Slider> */}
+
           <div className={styles.toggleLandingPage}>
             <div className={styles.rectangleParent}>
               <div className={styles.frameChild} />
